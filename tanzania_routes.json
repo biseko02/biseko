@@ -1,0 +1,22 @@
+{
+    "Dar es Salaam": {
+        "Ilala": 5000,
+        "Temeke": 6000,
+        "Kinondoni": 7000
+    },
+    "Arusha": {
+        "Arusha City": 10000,
+        "Meru": 12000,
+        "Karatu": 15000
+    },
+    "Mwanza": {
+        "Nyamagana": 8000,
+        "Ilemela": 9000,
+        "Sengerema": 11000
+    },
+    "Dodoma": {
+        "Dodoma City": 7000,
+        "Bahi": 8500,
+        "Kondoa": 10000
+    }
+}

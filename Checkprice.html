@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Ticket Price</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f4f8;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        h2 {
+            color: #003366;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .price-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+            color: #003366;
+        }
+
+        button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #00509e;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Check Ticket Price</h2>
+
+        <label for="region">Select Region:</label>
+        <select id="region" name="region">
+            <option value="">Select Region</option>
+        </select>
+
+        <label for="district">Select District:</label>
+        <select id="district" name="district">
+            <option value="">Select District</option>
+        </select>
+
+        <div class="price-box" id="priceDisplay">Price: -</div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Load JSON Data for Regions & Prices
+            $.getJSON("tanzania_routes.json", function (data) {
+                let regions = data;
+                let regionDropdown = $("#region");
+                let districtDropdown = $("#district");
+                let priceDisplay = $("#priceDisplay");
+
+                // Populate Regions
+                $.each(regions, function (region, districts) {
+                    regionDropdown.append(`<option value="${region}">${region}</option>`);
+                });
+
+                // When region changes, update districts
+                regionDropdown.change(function () {
+                    let selectedRegion = $(this).val();
+                    districtDropdown.empty().append(`<option value="">Select District</option>`);
+                    priceDisplay.text("Price: -");
+
+                    if (regions[selectedRegion]) {
+                        $.each(regions[selectedRegion], function (district, price) {
+                            districtDropdown.append(`<option value="${district}" data-price="${price}">${district}</option>`);
+                        });
+                    }
+                });
+
+                // When district changes, show price
+                districtDropdown.change(function () {
+                    let selectedPrice = $("option:selected", this).data("price");
+                    if (selectedPrice) {
+                        priceDisplay.text(`Price: ${selectedPrice} TZS`);
+                    } else {
+                        priceDisplay.text("Price: -");
+                    }
+                });
+
+            });
+        });
+    </script>
+
+</body>
+</html>

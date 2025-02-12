@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticketing System</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f4f8;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #00509e;
+        }
+
+        /* Container */
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #003366;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .bold { font-weight: bold; }
+        .italic { font-style: italic; }
+        .underline { text-decoration: underline; }
+
+        /* Responsive Images */
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Ticket Card */
+        .ticket-card {
+            background-color: #fff;
+            padding: 15px;
+            border: 2px solid #003366;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        pre {
+            background-color: #f0f8ff;
+            padding: 10px;
+            border: 1px solid #003366;
+            font-family: "Courier New", Courier, monospace;
+            white-space: pre-wrap;
+        }
+
+        /* Quick Links */
+        .links {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .links a {
+            display: block;
+            margin: 5px 0;
+            color: #00509e;
+            font-weight: bold;
+        }
+
+        /* Lists */
+        ul, ol, dl {
+            margin: 20px;
+            padding-left: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #003366;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Bus Ticketing Logo">
+            <h1>Bus Ticketing</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about us.html">About Us</a>
+            <a href="contactus.html">Contact</a>
+            <a href="registration.html">Login / Sign Up</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Available Offers</h2>
+        <p class="bold">Get up to 20% off on early bookings!</p>
+        <p class="italic">Plan your trips with comfort and savings.</p>
+        <p class="underline">Book your tickets now and travel smart!</p>
+
+        <!-- Images Section -->
+        <h2>Our Services</h2>
+        <div class="image-container">
+            <img src="image/bus1.jpg" alt="Luxury Bus">
+            <img src="image/bus2.jpg" alt="Comfortable Seats">
+            <img src="image/bus3.jpg" alt="Eco-friendly Bus">
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button><a href="registration.html">
+                Booknow
+            </a></button>
+        </div>
+
+        <!-- Ticket Information -->
+        <h2>Your Tickets</h2>
+        <div class="ticket-card">
+            <pre>
+BUS TICKET CONFIRMATION
+
+Name: John Doe
+Route: City A to City B
+Date: 02/15/2025
+Time: 9:00 AM
+Seat: 12A
+Price: $25.00
+            </pre>
+        </div>
+
+        <!-- Quick Links -->
+        <h2>Quick Links</h2>
+        <div class="links">
+            <a href="route.html" target="_blank">View Routes</a>
+            <a href="checkprice.html" target="_blank">Check Prices</a>
+            <a href="contactus.html" target="_blank">Contact Support</a>
+        </div>
+
+        <!-- Lists -->
+        <h2>Travel Checklist</h2>
+        <ul>
+            <li>Ticket Confirmation</li>
+            <li>Carry ID Proof</li>
+            <li>Pack Essentials</li>
+            <li>Arrive Early</li>
+        </ul>
+
+        <ol>
+            <li>Select Your Route</li>
+            <li>Choose Travel Date</li>
+            <li>Confirm Payment</li>
+        </ol>
+
+        <dl>
+            <dt>Express Bus</dt>
+            <dd>Fast and efficient for shorter distances.</dd>
+            <dt>Luxury Bus</dt>
+            <dd>Spacious and comfortable seating for long routes.</dd>
+            <dt>Eco Bus</dt>
+            <dd>Environmentally friendly and sustainable travel.</dd>
+        </dl>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Bus Ticketing System. All Rights Reserved.
+    </footer>
+</body>
+</html>
